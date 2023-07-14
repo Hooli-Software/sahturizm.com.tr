@@ -1,0 +1,105 @@
+{% extends 'origin/base.django-html' %}
+
+{% load static %}
+{% load i18n %}
+{% load transfers %}
+
+{% block title %}
+    {% trans "About us" %}
+{% endblock %}
+
+{% block content %}
+{% include 'transfer/breadcrumb.django-html' with title='About us' title_detail='OUR VISION' background_url='/static/img/breadcrumb-backgrounds/about.png' %}
+
+<section class="about-us-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-img">
+                    <img src="{% static 'img/breadcrumb-backgrounds/about.jpg' %}" alt="Image">
+                    <div class="experience">
+                        <div class="">
+                            <h2>
+                                {% trans "20 years in tourism industry" %}
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <span class="top-title">{% trans "About us" %}</span>
+                    <h2>
+                        {% trans "We are a tour operator providing services in transfer and tour areas." %}
+                    </h2>
+                    <p>
+                        {% trans "As Şahturizm LTD, we have been serving you with our professional staff since 2004. We take you from Antalya airport to Lara, Belek, Side, Alanya, Kemer and all other cities and holiday resorts, as well as from the points you want and specify, and take you safely to the place you want to go, moreover, in the comfort of your home." %}
+                    </p>
+                    <ul>
+                        <li>
+                            <i class="bx bx-check"></i>
+                            {% trans "24/7 support" %}
+                        </li>
+                        <li>
+                            <i class="bx bx-check"></i>
+                            {% trans "Same day registration options" %}
+                        </li>
+                        <li>
+                            <i class="bx bx-check"></i>
+                            {% trans "Wide range of prices" %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="counter-area bg-color pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-counter">
+                    <i class="flaticon-package"></i>
+                    <h2>
+                        <span class="odometer" data-count="950">00</span>
+                        <span class="target">+</span>
+                    </h2>
+                    <p>{% trans "Tour programs" %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-counter">
+                    <i class="flaticon-worldwide"></i>
+                    <h2>
+                        <span class="odometer" data-count="850">00</span>
+                        <span class="target">+</span>
+                    </h2>
+                    <p>{% trans "Language support" %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-counter">
+                    <i class="flaticon-user"></i>
+                    <h2>
+                        <span class="odometer" data-count="550">00</span>
+                        <span class="traget">+</span>
+                    </h2>
+                    <p>{% trans "Happy customer" %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-counter">
+                    <i class="flaticon-location-1"></i>
+                    <h2>
+                        <span class="odometer" data-count="440">00</span>
+                        <span class="target">+</span>
+                    </h2>
+                    <p>{% trans "Completed transfers" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

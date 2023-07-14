@@ -1,0 +1,97 @@
+{% extends 'origin/base.django-html' %}
+
+{% load static %}
+{% load transfers %}
+
+{% block title %}
+    {{ object.name }}
+{% endblock %}
+
+{% block content %}
+{% include 'transfer/breadcrumb.django-html' with title=object.name title_detail=object.name background_url=object.image.url %}
+<section class="services-details-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                {% if object.video_link %}
+                    <iframe height="315" style="width:100%"
+                        src="{{ object.video_link }}">
+                    </iframe>
+                    <br>
+                {% endif %}
+                <div class="content-one">
+                    <h3>{{ object.excerpt }}</h3>
+                    <p>{{ object.description | markdown }}</p>
+                    <br>
+                    <a href='https://api.whatsapp.com/send?phone=905060335639&text=I want "{{ object.name }} ({{ object.id }})" tour' class="btn-lg btn-success">
+                        I WANT THIS TOUR
+                    </a>
+                    <br>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="widget-sidebar">
+                    <div class="sidebar-widget categories">
+                        <h3>Kategori</h3>
+                        <ul>
+                            <li>
+                                <a href="#">{{ object.category }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget categories">
+                        <h3>Süre</h3>
+                        <ul>
+                            <li>
+                                Tur süresi:
+                                <span>{{ tour.duration_hours }} saat</span>
+                            </li>
+                            <li>
+                                Başlangıç-bitiş saati:
+                                <span>
+                                    {% if tour.time_start %}
+                                        {{ tour.time_start }}
+                                    {% else %}
+                                        Yok
+                                    {% endif %}
+                                    &nbsp;
+                                    -
+                                    &nbsp;
+                                    {% if tour.time_end %}
+                                        {{ tour.time_end }}
+                                    {% else %}
+                                        Yok
+                                    {% endif %}
+                                </span>
+                            </li>
+                            {% if object.weekdays.all %}
+                                <b>
+                                    Detaylar:
+                                </b>
+                                <br>
+                                <span>
+                                    {% for day in object.weekdays.all %}
+                                        {{ day.name }}
+                                        {% if not forloop.last %},{% endif %}
+                                    {% endfor %}
+                                </span>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget categories">
+                        <h3>Etiketler</h3>
+                        <ul>
+                            {% for tag in object.tags.all %}
+                                <li>
+                                    {{ tag.name }}
+                                    <span>{{ tag.tour_set.count }} tur</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

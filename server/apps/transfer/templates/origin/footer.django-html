@@ -1,0 +1,96 @@
+{% load static %}
+{% load i18n %}
+{% load transfers %}
+
+{% get_company_data as company_data %}
+
+<footer class="footer-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget">
+                    <a href="index.html" class="logo">
+                        <img src="{% static 'img/breadcrumb-backgrounds/temporary-logo.jpg' %}" alt="Image">
+                    </a>
+                    <p>{% trans "Luxury, Comfortable And Safe Transfer" %}</p>
+                    <ul class="social-icon">
+                        {% get_media as media %}
+                        {% for media_item in media %}
+                            <li>
+                                <a href="{{ media_item.link }}">
+                                    <i class="{{ media_item.fa_icon }}"></i>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget">
+                    <h3>{% trans "Tour itineraries" %}</h3>
+                    <ul class="import-link">
+                        {% get_latest_tours as tours %}
+                        {% for tour in tours %}
+                            <li>
+                                <a href="{{ tour.get_absolute_url }}">{{ tour.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget">
+                    <h3>{% trans "Pages" %}</h3>
+                    <ul class="import-link">
+                        <li>
+                            <a href="{% url 'transfer:home' %}">{% trans "Home page" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'transfer:about' %}">{% trans "About us" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'transfer:contact' %}">{% trans "Contact us" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'transfer:order' %}">{% trans "Get transfer" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'transfer:tour-list' %}">{% trans "Get Tour" %}</a>
+                        </li>
+                        <li>
+                            <a href="#">{% trans "FAQ" %}</a>
+                        </li>
+                        <li>
+                            <a href="#">{% trans "Terms of use" %}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget">
+                    <h3>{% trans "Contact data" %}</h3>
+                    <ul class="address">
+                        <li class="location">
+                            <i class="bx bxs-location-plus"></i>
+                            <a href="{{ company_data.address_link }}">
+                                {{ company_data.address }}
+                            </a>
+                        </li>
+                        <li>
+                            <i class="bx bxs-envelope"></i>
+                            <a
+                                href="mailto:{{ company_data.email }}"><span>{{ company_data.email }}</span></a>
+                        </li>
+                        <li>
+                            <i class="bx bxs-phone-call"></i>
+                            <a href="tel:{{ company_data.phone }}">{{ company_data.phone_repr }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<a href="https://api.whatsapp.com/send?phone=905060335639" class="btn-whatsapp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>

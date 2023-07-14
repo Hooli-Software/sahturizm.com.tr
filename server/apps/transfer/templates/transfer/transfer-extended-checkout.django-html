@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer checkout ({{ object.uuid }})</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        .checkout-container
+        {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        @media print
+        {
+            .checkout-container
+            {
+                width: 100%;
+                max-width: none;
+                /* font-size: 1.5em; */
+            }
+        }
+    </style>
+    <div class="checkout-container bg-light p-3">
+        <p>
+            Customer fullname : <b>{{ object.first_name }} {{ object.last_name }}</b>
+            <br>
+            Customer phone number : <b>{{ object.phone }}</b>
+        </p>
+        <p>
+            Note :
+            <br>
+            {{ object.comment }}
+        </p>
+        <div style="border-bottom: 1px dotted black"></div>
+        <br>
+        <p class="bg-success text-light">
+            &nbsp;Order type : {% if object.back %}Double (with back){% else %}Single (without back transfer){% endif %}&nbsp;
+        </p>
+        <p>
+            Datetime : {{ object.date.day }}.{{ object.date.month }}.{{ object.date.year }} - {{ object.time }}
+            {% if object.back %}
+                <br>
+                Datetime BACK : {{ object.date_back.day }}.{{ object.date_back.month }}.{{ object.date_back.year }} - {{ object.time_back }}
+            {% endif %}
+        </p>
+        <p>
+            From : {{ object.rfrom }}
+            <br>
+            To : {{ object.rto }}
+        </p>
+        <p>
+            Pax : {{ object.pax }}
+            {% if object.back %}
+                <br>
+                Pax BACK : {{ object.pax_back }}
+            {% endif %}
+        </p>
+        <p>
+            Baggage : {{ object.baggage }}
+            {% if object.back %}
+                <br>
+                Baggage BACK : {{ object.baggage_back }}
+            {% endif %}
+        </p>
+        <p>
+            IATA (flight code) : {{ object.iata }}
+            {% if object.back %}
+                <br>
+                IATA (flight code) BACK : {{ object.iata_back }}
+            {% endif %}
+        </p>
+        <div style="border-bottom: 1px dotted black"></div>
+        <br>
+        <p>
+            PAYMENT STATUS : 
+            {% if object.paid %}
+                <b class="bg-success text-light">
+                    &nbsp;PAID&nbsp;
+                </b>
+            {% else %}
+                <b class="bg-warning">
+                    &nbsp;PENDING&nbsp;
+                </b>
+            {% endif %}
+        </p>
+        <p>
+            TRANSFER STATUS : 
+            {% if object.done %}
+                <b class="bg-success text-light">
+                    &nbsp;FINISHED&nbsp;
+                </b>
+            {% else %}
+                <b class="bg-warning">
+                    &nbsp;PENDING&nbsp;
+                </b>
+            {% endif %}
+        </p>
+        <div style="border-bottom: 1px dotted black"></div>
+        <br>
+        <p class="text-end">
+            TOTAL PRICE : <b>
+                {% if object.price %}
+                    {{ object.price }}
+                {% else %}
+                    <span class="bg-danger text-light">&nbsp;UNDEFINED&nbsp;</span>
+                {% endif %}
+            </b> USD
+        </p>
+        <p>
+            <small>IMPORTANT NOTE : This is not final price, because you have undefined data in your order.</small>
+        </p>
+        <small class="text-muted">
+            Creation date : {{ object.created.day }}.{{ object.created.month }}.{{ object.created.year }}
+        </small>
+    </div>
+</body>
+</html>

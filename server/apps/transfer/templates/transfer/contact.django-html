@@ -1,0 +1,125 @@
+{% extends 'origin/base.django-html' %}
+
+{% load static %}
+{% load i18n %}
+{% load transfers %}
+{% load widget_tweaks %}
+
+{% block title %}
+    {% trans 'Contact us' %}
+{% endblock %}
+
+{% block content %}
+{% get_company_data as company_data %}
+
+{% include 'transfer/breadcrumb.django-html' with title='Contact us' title_detail='GET THE HOTEST PROMOTIONS AND DISCOUNTS' background_url="/static/img/breadcrumb-backgrounds/contact.jpg" %}
+
+<section class="contact-info-area bg-color pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-contact-info">
+                    <i class="bx bx-envelope"></i>
+                    <h3>{% trans "Email Us:" %}</h3>
+                    <a href="mailto:{{ company_data.email }}">
+                        <span>{{ company_data.email }}</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-contact-info">
+                    <i class="bx bx-phone-call"></i>
+                    <h3>{% trans "Call Us:" %}</h3>
+                    <a href="tel:{{ company_data.phone }}">Tel. {{ company_data.phone_repr }}</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-contact-info">
+                    <i class="bx bx-location-plus"></i>
+                    <h3>{% trans "Antalya" %}</h3>
+                    <a href="{{ company_data.address_link }}">{{ company_data.address }}</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-contact-info">
+                    <i class="bx bx-support"></i>
+                    <h3>{% trans "Live Chat" %}</h3>
+                    <a href="#">{% trans "Live Chat All The Time With Our Company 24/7" %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="main-contact-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>{% trans "Drop Us A Message For Any Query" %}</h2>
+        </div>
+        <form method="POST">{% csrf_token %}
+            {% for message in messages %}
+                <script>
+                    Swal.fire({
+                        icon: 'success',
+                        text: '{{ message }}!',
+                    })
+                </script>
+            {% endfor %}
+            <br>
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <div class="form-group">
+                        {% render_field form.full_name class="form-control bg-light" placeholder=form.full_name.label %}
+                        {% for error in form.full_name.errors %}
+                            <small class="text-warning">
+                                {{ error }}
+                            </small>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="form-group">
+                        {% render_field form.email class="form-control bg-light" placeholder=form.email.label %}
+                        {% for error in form.email.errors %}
+                            <small class="text-warning">
+                                {{ error }}
+                            </small>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <div class="form-group">
+                        {% render_field form.description class="form-control bg-light" placeholder=form.description.label %}
+                        {% for error in form.description.errors %}
+                            <small class="text-warning">
+                                {{ error }}
+                            </small>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group checkboxs">
+                        <p>
+                            {% block transblock %}
+                                You are accepting <a href="#">Terms & Conditions</a> And <a href="#">Privacy Policy</a> by filling this form.
+                            {% endblock %}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="default-btn btn-two">
+                        <span>{% trans "Send Message" %}</span>
+                    </button>
+                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<div class="map-area">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102101.70178409718!2d30.63570315476379!3d36.89804638557534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x64d56528deca7eb9%3A0x490830813d49496c!2zxZ5BSCBUVVLEsFpN!5e0!3m2!1str!2str!4v1687868253460!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+{% endblock %}

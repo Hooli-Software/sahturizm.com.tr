@@ -1,0 +1,80 @@
+{% load static %}
+
+<!doctype html>
+<html lang="zxx">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="{% static '' %}css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static '' %}css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{% static '' %}css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{% static '' %}css/animate.min.css">
+    <link rel="stylesheet" href="{% static '' %}css/boxicons.min.css">
+    <link rel="stylesheet" href="{% static '' %}css/magnific-popup.min.css">
+    <link rel="stylesheet" href="{% static '' %}css/flaticon.css">
+    <link rel="stylesheet" href="{% static '' %}css/meanmenu.min.css">
+    <link rel="stylesheet" href="{% static '' %}css/nice-select.min.css">
+    <link rel="stylesheet" href="{% static '' %}css/odometer.min.css">
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    <link rel="stylesheet" href="{% static '' %}css/dark.css">
+    <link rel="stylesheet" href="{% static '' %}css/responsive.css">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <title>
+        {% block title %}
+        {% endblock %} - Şahturizm | Lüks,Konforlu Ve Güvenli Transfer
+    </title>
+</head>
+
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    {% include 'origin/header.django-html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'origin/footer.django-html' %}
+
+
+    <div class="copy-right-area">
+        <div class="container">
+            <p>
+                Made with ❤️ by <i class="bx bx-copyright"></i> Hoolisoftware
+            </p>
+        </div>
+    </div>
+
+
+    <div class="go-top">
+        <i class="bx bx-chevrons-up"></i>
+        <i class="bx bx-chevrons-up"></i>
+    </div>
+
+
+    <script src="{% static '' %}js/jquery.min.js"></script>
+    <script src="{% static '' %}js/bootstrap.bundle.min.js"></script>
+    <script src="{% static '' %}js/meanmenu.min.js"></script>
+    <script src="{% static '' %}js/wow.min.js"></script>
+    <script src="{% static '' %}js/owl.carousel.min.js"></script>
+    <script src="{% static '' %}js/nice-select.min.js"></script>
+    <script src="{% static '' %}js/magnific-popup.min.js"></script>
+    <script src="{% static '' %}js/jarallax.min.js"></script>
+    <script src="{% static '' %}js/appear.min.js"></script>
+    <script src="{% static '' %}js/odometer.min.js"></script>
+    <script src="{% static '' %}js/smoothscroll.min.js"></script>
+    <script src="{% static '' %}js/form-validator.min.js"></script>
+    <script src="{% static '' %}js/contact-form-script.js"></script>
+    <script src="{% static '' %}js/ajaxchimp.min.js"></script>
+    <script src="{% static '' %}js/custom.js"></script>
+</body>
+</html>

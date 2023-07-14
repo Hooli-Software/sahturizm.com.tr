@@ -1,0 +1,131 @@
+{% load static %}
+{% load i18n %}
+{% load transfers %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+{% get_company_data as company_data %}
+
+<header class="header-area">
+
+    <div class="top-header top-header-three">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-10">
+                    <ul class="header-left-content">
+                        <li>
+                            <i class="bx bx-home"></i>
+                            <a href="{{ company_data.address_link }}">
+                                {{ company_data.address }}
+                            </a>
+                        </li>
+                        <li>
+                            <i class="bx bx-phone-call"></i>
+                            <a href="tel:{{ company_data.phone }}">{{ company_data.phone_repr }}</a>
+                        </li>
+                        <li>
+                            <i class="bx bx-envelope"></i>
+                            <a
+                                href="mailto:{{ company_data.email }}"><span>{{ company_data.email }}</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-2">
+                    <div class="header-right-content">
+                        <form action="{% url 'set_language' %}" method="POST">{% csrf_token %}
+                            <input type="hidden" name="next" value="{{ redirect_to }}">
+                            <ul class="flag-area d-flex" style="justify-content: right;">
+                                {% for language in languages%}
+                                    <li class="flag-item-top">
+                                        <button name="language" style="background: none; height: 100%;" type="submit" value="{{ language.code }}" class="flag-bar p-1">
+                                            <img style="height: 100%; object-fit: cover;" src="{% static '' %}img/flag/{{ language.code }}.png" alt="{{ language.name }}">
+                                        </button>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="navbar-area">
+        <div class="mobile-nav">
+            <div class="container">
+                <div class="mobile-menu">
+                    <div class="logo">
+                        <a href="{% url 'transfer:home' %}">
+                            <img src="{% static 'img/breadcrumb-backgrounds/temporary-logo.jpg' %}" alt="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="desktop-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="{% url 'transfer:home' %}">
+                        <img src="{% static 'img/breadcrumb-backgrounds/temporary-logo.jpg' %}" alt="logo">
+                    </a>
+                    <div class="collapse navbar-collapse mean-menu">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a href="{% url 'transfer:home' %}" class="nav-link">{% trans 'Home page' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'transfer:contact' %}" class="nav-link">{% trans 'Contact us' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'transfer:about' %}" class="nav-link">{% trans 'About us' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'transfer:tour-list' %}" class="nav-link">{% trans 'Get tour' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">{% trans 'FAQ' %}</a>
+                            </li>
+                        </ul>
+                        <div class="others-option">
+                            <div class="get-quote">
+                                <a href="{% url 'transfer:order' %}" class="default-btn">
+                                    <span>{% trans 'BUY TRANSFER' %}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="others-option-for-responsive">
+            <div class="container">
+                <div class="dot-menu">
+                    <div class="inner">
+                        <div class="circle circle-one"></div>
+                        <div class="circle circle-two"></div>
+                        <div class="circle circle-three"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="option-inner">
+                        <div class="others-option justify-content-center d-flex align-items-center">
+                            <div class="get-quote">
+                                <a href="{% url 'transfer:order' %}" class="default-btn">
+                                    <span>{% trans 'BUY TRANSFER' %}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<script>
+
+</script>

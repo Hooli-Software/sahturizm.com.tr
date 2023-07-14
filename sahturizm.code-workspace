@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "./server/"
+		},
+		{
+			"path": "./server/core/"
+		},
+		{
+			"path": "./server/apps/transfer/"
+		},
+		{
+			"path": "./server/apps/transfer/"
+		},
+		{
+			"path": "./.theme/"
+		}
+	],
+	"settings": {}
+}

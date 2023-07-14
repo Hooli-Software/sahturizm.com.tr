@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<div class="page-title-area bg-25" style="background: url('{{ background_url }}') no-repeat center center / cover">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>{% trans title_detail %}</h2>
+            <ul>
+                <li>
+                    <a href="{% url 'transfer:home' %}">
+                        {% trans "Home Page" %}
+                    </a>
+                </li>
+                <li class="active">{% trans title %}</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,290 @@
+{% extends 'origin/base.django-html' %}
+
+{% load static %}
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}
+    {% trans "GET TRANSFER ONLINE" %}
+{% endblock %}
+
+{% block content %}
+
+<section class="track-area ptb-100 jarallax page-title-area text-start" data-jarallax='{"speed": 0.3}'>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="tab quote-list-tab">
+                    <ul class="tabs">
+                        <li>
+                            <a href="#">
+                                <i class="flaticon-truck"></i>
+                                {% trans "Custom package" %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                {% trans "Ready packages" %}
+                                <i class="fa-solid fa-tags"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab_content">
+                        <div class="tabs_item">
+                            {% for message in messages %}
+                                <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        text: '{{ message }}!',
+                                    })
+                                </script>
+                            {% endfor %}
+                            <form method="POST">{% csrf_token %}
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>{% trans "Personal data" %}</p>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="form-group">
+                                            {% render_field form.first_name class="form-control bg-white" placeholder=form.first_name.label %}
+                                            {% for error in form.first_name.errors %}
+                                                <small class="text-warning">
+                                                    {{ error }}
+                                                </small>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="form-group">
+                                            {% render_field form.last_name class="form-control bg-white" placeholder=form.last_name.label %}
+                                            {% for error in form.last_name.errors %}
+                                                <small class="text-warning">
+                                                    {{ error }}
+                                                </small>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="form-group">
+                                            {% render_field form.phone class="form-control bg-white" placeholder=form.phone.label %}
+                                            {% for error in form.phone.errors %}
+                                                <small class="text-warning">
+                                                    {{ error }}
+                                                </small>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="form-group">
+                                            {% render_field form.email class="form-control bg-white" placeholder=form.email.label %}
+                                            {% for error in form.email.errors %}
+                                                <small class="text-warning">
+                                                    {{ error }}
+                                                </small>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-6 mb-3">
+                                        <p>{% trans "Start location" %}</p>
+                                        <div class="form-group">
+                                            {% render_field form.rfrom class="form-control bg-white mb-0" placeholder=form.rfrom.label %}
+                                            {% for error in form.rfrom.errors %}
+                                                <small class="text-warning">
+                                                    {{ error }}
+                                                </small>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6 mb-3">
+                                        <div class="d-flex justify-content-center align-items-center h-100" style="font-size: 2em;">
+                                            <div id="buttonTransferToggle" class="btn btn-primary btn-lg">
+                                                <i id="iconTransferDirect" class="fa-solid fa-arrow-right-arrow-left d-none"></i>
+                                                <i id="iconTransferDual" class="fa-solid fa-arrow-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6 mb-3">
+                                        <p>{% trans "Destination location" %}</p>
+                                        <div class="form-group">
+                                            {% render_field form.rto class="form-control bg-white mb-0" placeholder=form.rto.label %}
+                                            {% for error in form.rto.errors %}
+                                                <small class="text-warning">
+                                                    {{ error }}
+                                                </small>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <br><br><br>
+                                    <p class="text-center">
+                                        {% trans "If you wish, you can create both a round trip and a return transfer within the scope of the same request, for this click the blue arrow button above." %}
+                                    </p>
+                                    <br>
+                                    <br>
+                                    <br>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>{% trans "Transfer data" %}</p>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="form-group">
+                                            {% render_field form.date class="form-control bg-white" placeholder=form.date.label type='date' %}
+                                            {% for error in form.date.errors %}
+                                                <small class="text-warning">
+                                                    {{ error }}
+                                                </small>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="form-group">
+                                            {% render_field form.time class="form-control bg-white" placeholder=form.time.label type='time' %}
+                                            {% for error in form.time.errors %}
+                                                <small class="text-warning">
+                                                    {{ error }}
+                                                </small>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="form-group">
+                                            {% render_field form.iata class="form-control bg-white" placeholder=form.iata.label %}
+                                            {% for error in form.iata.errors %}
+                                                <small class="text-warning">
+                                                    {{ error }}
+                                                </small>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="form-group">
+                                            {% render_field form.pax class="form-control bg-white" placeholder=form.pax.label %}
+                                            {% for error in form.pax.errors %}
+                                                <small class="text-warning">
+                                                    {{ error }}
+                                                </small>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="form-group">
+                                            {% render_field form.baggage class="form-control bg-white" placeholder=form.baggage.label %}
+                                            {% for error in form.baggage.errors %}
+                                                <small class="text-warning">
+                                                    {{ error }}
+                                                </small>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div id="backBlock" class="d-none row">
+                                        <div class="col-12">
+                                            <p>{% trans "Reverse (back) transfer data" %}</p>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div class="form-group">
+                                                {% render_field form.date_back class="form-control bg-white" placeholder=form.date.label type='date' %}
+                                                {% for error in form.date_back.errors %}
+                                                    <small class="text-warning">
+                                                        {{ error }}
+                                                    </small>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div class="form-group">
+                                                {% render_field form.time_back class="form-control bg-white" placeholder=form.time.label type='time' %}
+                                                {% for error in form.time_back.errors %}
+                                                    <small class="text-warning">
+                                                        {{ error }}
+                                                    </small>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div class="form-group">
+                                                {% render_field form.iata_back class="form-control bg-white" placeholder=form.iata.label %}
+                                                {% for error in form.iata_back.errors %}
+                                                    <small class="text-warning">
+                                                        {{ error }}
+                                                    </small>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div class="form-group">
+                                                {% render_field form.pax_back class="form-control bg-white" placeholder=form.pax.label %}
+                                                {% for error in form.pax_back.errors %}
+                                                    <small class="text-warning">
+                                                        {{ error }}
+                                                    </small>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <div class="form-group">
+                                                {% render_field form.baggage_back class="form-control bg-white" placeholder=form.baggage_back.label %}
+                                                {% for error in form.baggage_back.errors %}
+                                                    <small class="text-warning">
+                                                        {{ error }}
+                                                    </small>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>{% trans "Your note" %}</p>
+                                    {% render_field form.comment class="form-control bg-white" placeholder=form.comment.label %}
+                                    {% for error in form.comment.errors %}
+                                        <small class="text-warning">
+                                            {{ error }}
+                                        </small>
+                                    {% endfor %}
+                                </div>
+                                {% render_field form.back class='d-none' id='backCheckboxHidden' %}
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="submit" class="default-btn">
+                                            {% trans "SEND REQUEST FOR FREE" %}
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tabs_item">
+                            <p>Unfortunately, we don't have any transfer packages right now. Please come back later...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    window.addEventListener("load", () => {
+        const buttonTransferToggle = document.querySelector('#buttonTransferToggle')
+        
+        if (buttonTransferToggle) {
+
+            buttonTransferToggle.addEventListener('click', (e) => {
+                document.querySelector('#backBlock').classList.toggle('d-none')
+                document.querySelector('#iconTransferDirect').classList.toggle('d-none')
+                document.querySelector('#iconTransferDual').classList.toggle('d-none')
+                document.querySelector('#backCheckboxHidden').checked = !document.querySelector('#backCheckboxHidden').checked
+            })
+
+        }
+        console.log('lol')
+    });
+</script>
+{% endblock %}

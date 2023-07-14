@@ -1,0 +1,399 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-14 14:57+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\apps\transfer\models.py:40 .\apps\transfer\models.py:230
+msgid "E-mail"
+msgstr "E-posta"
+
+#: .\apps\transfer\models.py:41
+msgid "Phone number"
+msgstr "Telefon numarası"
+
+#: .\apps\transfer\models.py:43 .\apps\transfer\models.py:80
+msgid "Passengers"
+msgstr "Yolcu sayısı"
+
+#: .\apps\transfer\models.py:44 .\apps\transfer\models.py:81
+msgid "Baggage (kg)"
+msgstr "Bagaj (kg)"
+
+#: .\apps\transfer\models.py:46
+msgid "From where?"
+msgstr "Nereden?"
+
+#: .\apps\transfer\models.py:47
+msgid "To where?"
+msgstr "Nereye?"
+
+#: .\apps\transfer\models.py:49 .\apps\transfer\models.py:77
+msgid "Meeting date"
+msgstr "Buluşma tarihi"
+
+#: .\apps\transfer\models.py:50 .\apps\transfer\models.py:78
+msgid "Meeting time"
+msgstr "Buluşma saati"
+
+#: .\apps\transfer\models.py:74 .\apps\transfer\models.py:75
+msgid "Flight code (IATA)"
+msgstr "Uçuş kodu (IATA)"
+
+#: .\apps\transfer\models.py:83
+msgid "Name"
+msgstr "İsim"
+
+#: .\apps\transfer\models.py:84
+msgid "Surname"
+msgstr "Soyisim"
+
+#: .\apps\transfer\models.py:85
+msgid "Description"
+msgstr "Açıklama"
+
+#: .\apps\transfer\models.py:90
+msgid "Rating"
+msgstr "Değerlendirme"
+
+#: .\apps\transfer\models.py:229
+msgid "Name surname"
+msgstr "İsim soyisim"
+
+#: .\apps\transfer\models.py:231
+msgid "Your message"
+msgstr "Mesajınız"
+
+#: .\apps\transfer\templates\origin\footer.django-html:15
+#: .\apps\transfer\templates\transfer\home.django-html:21
+msgid "Luxury, Comfortable And Safe Transfer"
+msgstr "Lüks,Konforlu Ve Güvenli Transfer"
+
+#: .\apps\transfer\templates\origin\footer.django-html:30
+msgid "Tour itineraries"
+msgstr "Tur programları"
+
+#: .\apps\transfer\templates\origin\footer.django-html:43
+msgid "Pages"
+msgstr "Sayfalar"
+
+#: .\apps\transfer\templates\origin\footer.django-html:46
+#: .\apps\transfer\templates\origin\header.django-html:77
+msgid "Home page"
+msgstr "Ana sayfa"
+
+#: .\apps\transfer\templates\origin\footer.django-html:49
+#: .\apps\transfer\templates\origin\header.django-html:83
+#: .\apps\transfer\templates\transfer\about.django-html:8
+#: .\apps\transfer\templates\transfer\about.django-html:31
+msgid "About us"
+msgstr "Hakkımızda"
+
+#: .\apps\transfer\templates\origin\footer.django-html:52
+#: .\apps\transfer\templates\origin\header.django-html:80
+#: .\apps\transfer\templates\transfer\contact.django-html:9
+msgid "Contact us"
+msgstr "İletişim"
+
+#: .\apps\transfer\templates\origin\footer.django-html:55
+msgid "Get transfer"
+msgstr "Tamamlanmış transferler"
+
+#: .\apps\transfer\templates\origin\footer.django-html:58
+msgid "Get Tour"
+msgstr "Tur listesi"
+
+#: .\apps\transfer\templates\origin\footer.django-html:61
+#: .\apps\transfer\templates\origin\header.django-html:89
+#: .\apps\transfer\templates\transfer\faq-list.django-html:17
+msgid "FAQ"
+msgstr "SSS"
+
+#: .\apps\transfer\templates\origin\footer.django-html:64
+msgid "Terms of use"
+msgstr "Kullanım koşulları & müşteri politikası"
+
+#: .\apps\transfer\templates\origin\footer.django-html:71
+msgid "Contact data"
+msgstr "İletişim"
+
+#: .\apps\transfer\templates\origin\header.django-html:86
+msgid "Get tour"
+msgstr "Tur listesi"
+
+#: .\apps\transfer\templates\origin\header.django-html:95
+#: .\apps\transfer\templates\origin\header.django-html:117
+msgid "BUY TRANSFER"
+msgstr "TRANSFER KAYIT"
+
+#: .\apps\transfer\templates\transfer\about.django-html:23
+msgid "20 years in tourism industry"
+msgstr "20 yıldır sektör içindeyiz"
+
+#: .\apps\transfer\templates\transfer\about.django-html:33
+msgid "We are a tour operator providing services in transfer and tour areas."
+msgstr ""
+"Bizim sitemizde transfer ve tur paketleri en güncel bilgileriyle mevcuttur."
+
+#: .\apps\transfer\templates\transfer\about.django-html:36
+msgid ""
+"As Şahturizm LTD, we have been serving you with our professional staff since "
+"2004. We take you from Antalya airport to Lara, Belek, Side, Alanya, Kemer "
+"and all other cities and holiday resorts, as well as from the points you "
+"want and specify, and take you safely to the place you want to go, moreover, "
+"in the comfort of your home."
+msgstr ""
+"Şahturizm LTD olarak 2018 yılından bu yana profesyonel kadromuz ile sizlere "
+"hizmet vermekteyiz. Hem Antalya havalimanı kalkışlı- Lara, Belek, Side, "
+"Alanya, Kemer ve diğer tüm şehir ve tatil beldelerine, hem de sizin "
+"istediğiniz ve belirlemiş olduğunuz noktalardan sizleri alıyor gitmek "
+"istediğiniz yere güvenli bir şekilde üstelik evinizin konforunda götürüyoruz."
+
+#: .\apps\transfer\templates\transfer\about.django-html:41
+msgid "24/7 support"
+msgstr "24/7 destek"
+
+#: .\apps\transfer\templates\transfer\about.django-html:45
+msgid "Same day registration options"
+msgstr "Kayıt günü sizi alıp dilediğiniz yere götürüyoruz"
+
+#: .\apps\transfer\templates\transfer\about.django-html:49
+msgid "Wide range of prices"
+msgstr "Geniş fiyat seçenekleri"
+
+#: .\apps\transfer\templates\transfer\about.django-html:68
+#: .\apps\transfer\templates\transfer\home.django-html:195
+msgid "Tour programs"
+msgstr "Tur paketi"
+
+#: .\apps\transfer\templates\transfer\about.django-html:78
+#: .\apps\transfer\templates\transfer\home.django-html:205
+msgid "Language support"
+msgstr "Dil desteği"
+
+#: .\apps\transfer\templates\transfer\about.django-html:88
+#: .\apps\transfer\templates\transfer\home.django-html:215
+msgid "Happy customer"
+msgstr "Mutlu müşteri"
+
+#: .\apps\transfer\templates\transfer\about.django-html:98
+#: .\apps\transfer\templates\transfer\home.django-html:225
+msgid "Completed transfers"
+msgstr "Tamamlanmış transferler"
+
+#: .\apps\transfer\templates\transfer\breadcrumb.django-html:10
+#: .\apps\transfer\templates\transfer\home.django-html:8
+msgid "Home Page"
+msgstr "Ana sayfa"
+
+#: .\apps\transfer\templates\transfer\contact.django-html:23
+msgid "Email Us:"
+msgstr "Email gönderin:"
+
+#: .\apps\transfer\templates\transfer\contact.django-html:32
+msgid "Call Us:"
+msgstr "Bizi arayın:"
+
+#: .\apps\transfer\templates\transfer\contact.django-html:39
+msgid "Antalya"
+msgstr "Antalya"
+
+#: .\apps\transfer\templates\transfer\contact.django-html:46
+msgid "Live Chat"
+msgstr "Canlı Destek"
+
+#: .\apps\transfer\templates\transfer\contact.django-html:47
+msgid "Live Chat All The Time With Our Company 24/7"
+msgstr "Destek ekibimizle 7/24 iletişime geçin"
+
+#: .\apps\transfer\templates\transfer\contact.django-html:58
+msgid "Drop Us A Message For Any Query"
+msgstr "Talep ve şikayetleriniz için formu doldurun"
+
+#: .\apps\transfer\templates\transfer\contact.django-html:112
+msgid "Send Message"
+msgstr "Mesaj gödner"
+
+#: .\apps\transfer\templates\transfer\faq-list.django-html:8
+msgid "Frequently asked questions"
+msgstr "Sıkça sorulan sorular"
+
+#: .\apps\transfer\templates\transfer\faq-list.django-html:18
+msgid "Get Every Single Answer"
+msgstr "Her bir sorunuza cevap alın"
+
+#: .\apps\transfer\templates\transfer\faq-list.django-html:50
+msgid "Drop Us A Message For Any Question"
+msgstr "Talep ve şikayetleriniz için formu doldurun"
+
+#: .\apps\transfer\templates\transfer\faq-list.django-html:104
+msgid "Send question"
+msgstr "Soru gönder"
+
+#: .\apps\transfer\templates\transfer\home.django-html:23
+msgid ""
+"You can take advantage of our airport transfer service to catch your plane "
+"on time or to go to your destination comfortably after many tiring journeys."
+msgstr ""
+"Uçağınıza zamanında yetişmek veya gideceğiniz yere onca yorucu yolculuktan "
+"sonra rahatça gitmek için havalimanına transfer hizmetimizden "
+"faydalanabilirsiniz."
+
+#: .\apps\transfer\templates\transfer\home.django-html:27
+msgid "GET TRANSFER"
+msgstr "TRANSFER KAYIT"
+
+#: .\apps\transfer\templates\transfer\home.django-html:30
+msgid "CONTACT US"
+msgstr "İLETİŞİME GEÇİN"
+
+#: .\apps\transfer\templates\transfer\home.django-html:40
+msgid "GET TRANSFER PRICE"
+msgstr "TRANSFER KAYIT"
+
+#: .\apps\transfer\templates\transfer\home.django-html:53
+msgid ""
+"Please fill out the transfer form below so that we can offer you a price "
+"quote."
+msgstr "Size fiyat teklifi sunmamız için aşağıdaki transfer formunu doldurunuz"
+
+#: .\apps\transfer\templates\transfer\home.django-html:59
+msgid ""
+"Our support team will contact you soon and offer you a price quote. Thank "
+"you for your attention. You can reach us 24/7 via the support line."
+msgstr ""
+"Destek ekibimiz yakın zamanda sizinle iletişime geçip size fiyat teklifi "
+"sunacaktır. İlginiz için teşekkür ederiz. 7/24 bize dilerseniz destek "
+"hattından ulaşabilirsiniz."
+
+#: .\apps\transfer\templates\transfer\home.django-html:157
+msgid "TOUR ITINERARIES"
+msgstr "TUR PROGRAMLARI"
+
+#: .\apps\transfer\templates\transfer\home.django-html:158
+msgid "BEST ALANYA TOURS, TRIPS AND ACTIVITIES, AT THE BEST PRICES"
+msgstr "EN İYİ ALANYA TURLARI, GEZİ VE AKTİVİTELERİ, EN UYGUN FİYATLARA"
+
+#: .\apps\transfer\templates\transfer\home.django-html:160
+msgid ""
+"Daily tours, excursions, activities, package tour programs, accommodation "
+"tours, private tour programs for groups and individuals in Alanya, Side, "
+"Antalya, Pamukkale and Cappadocia regions."
+msgstr ""
+"Alanya, Side, Antalya, Pamukkale ve Kapadokya bölgelerinde günlük turlar, "
+"geziler, aktiviteler, paket tur proğramları, konaklamalı turlar, gruplara ve "
+"şahıslara özel tur programları."
+
+#: .\apps\transfer\templates\transfer\home.django-html:176
+#: .\apps\transfer\templates\transfer\tour-list.django-html:35
+msgid "READ MORE"
+msgstr "DAHA FAZLA BİLGİ"
+
+#: .\apps\transfer\templates\transfer\order.django-html:8
+msgid "GET TRANSFER ONLINE"
+msgstr "TRANSFER KAYIT"
+
+#: .\apps\transfer\templates\transfer\order.django-html:22
+msgid "Custom package"
+msgstr "Fiyat hesaplama"
+
+#: .\apps\transfer\templates\transfer\order.django-html:27
+msgid "Ready packages"
+msgstr "Hazır paketler"
+
+#: .\apps\transfer\templates\transfer\order.django-html:45
+msgid "Personal data"
+msgstr "Özel bilgileriniz"
+
+#: .\apps\transfer\templates\transfer\order.django-html:93
+msgid "Start location"
+msgstr "Başlangıç noktası"
+
+#: .\apps\transfer\templates\transfer\order.django-html:112
+msgid "Destination location"
+msgstr "Gideceğiniz yer"
+
+#: .\apps\transfer\templates\transfer\order.django-html:124
+msgid ""
+"If you wish, you can create both a round trip and a return transfer within "
+"the scope of the same request, for this click the blue arrow button above."
+msgstr ""
+"Dilerseniz aynı talep kapsamında hem gidiş hem dönüş transferi "
+"oluşturabilirsiniz, bunun için üstteki mavi ok butonuna tıklayınız."
+
+#: .\apps\transfer\templates\transfer\order.django-html:132
+msgid "Transfer data"
+msgstr "Transfer (gidiş) bilgileri"
+
+#: .\apps\transfer\templates\transfer\order.django-html:188
+msgid "Reverse (back) transfer data"
+msgstr "Transfer (geliş) bilgileri"
+
+#: .\apps\transfer\templates\transfer\order.django-html:245
+msgid "Your note"
+msgstr "Notunuz"
+
+#: .\apps\transfer\templates\transfer\order.django-html:257
+msgid "SEND REQUEST FOR FREE"
+msgstr "FİYAT AL"
+
+#: .\apps\transfer\templates\transfer\tour-list.django-html:7
+#, fuzzy
+#| msgid "Tour list"
+msgid "Tour List"
+msgstr "Tur listesi"
+
+#: .\apps\transfer\templates\transfer\tour-list.django-html:16
+msgid "Tour list"
+msgstr "Tur listesi"
+
+#: .\apps\transfer\templates\transfer\tour-list.django-html:17
+msgid "BEST ANTALIA TOURS, ACTIVITIES FOR BEST PRICES"
+msgstr "EN İYİ ALANYA TURLARI, GEZİ VE AKTİVİTELERİ, EN UYGUN FİYATLARA"
+
+#: .\apps\transfer\templates\transfer\tour-list.django-html:19
+msgid "Alania, Side, Antalia, Pamukkale, Cappadocia tours and more"
+msgstr ""
+"Alanya, Side, Antalya, Pamukkale ve Kapadokya bölgelerinde günlük turlar, "
+"geziler, aktiviteler, paket tur proğramları, konaklamalı turlar, gruplara ve "
+"şahıslara özel tur programları."
+
+#: .\apps\transfer\templates\transfer\tour-list.django-html:47
+msgid "PREVIOUS"
+msgstr "ÖNCEKİ"
+
+#: .\apps\transfer\templates\transfer\tour-list.django-html:52
+msgid "Page"
+msgstr "Sayfa"
+
+#: .\apps\transfer\templates\transfer\tour-list.django-html:57
+msgid "NEXT"
+msgstr "SONRAKİ"
+
+#, fuzzy
+#~| msgid "Contact data"
+#~ msgid "Route data"
+#~ msgstr "İletişim"
+
+#~ msgid "OUR VISION"
+#~ msgstr "BİZİM VİZYONUMUZ"
+
+#~ msgid "GET THE HOTEST PROMOTIONS AND DISCOUNTS"
+#~ msgstr "EN GÜNCEL KAMPANYALAR VE İNDİRİMLER HAKKINDA BİLGİ ALIN"
+
+#~ msgid "BUY TOUR ONLINE"
+#~ msgstr "ONLINE TUR SIPARİŞ EDİN"

@@ -1,0 +1,65 @@
+{% extends 'origin/base.django-html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Tour List" %}
+{% endblock %}
+
+{% block content %}
+{% include 'transfer/breadcrumb.django-html' with title='Get Tour' title_detail='BUY TOUR ONLINE' background_url="/static/img/breadcrumb-backgrounds/tour-list.jpg" %}
+
+<section class="services-area services-area-two bg-color pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span>{% trans "Tour list" %}</span>
+            <h2>{% trans "BEST ANTALIA TOURS, ACTIVITIES FOR BEST PRICES" %}</h2>
+            <p>
+                {% trans "Alania, Side, Antalia, Pamukkale, Cappadocia tours and more" %}
+            </p>
+        </div>
+        <div class="row">
+            {% for object in object_list %}
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single-services-box">
+                        <a href="{{ object.get_absolute_url }}" class="services-img">
+                            <img src="{{ object.image.url }}" alt="Image">
+                        </a>
+                        <div class="services-content">
+                            <h3>
+                                <a href="{{ object.get_absolute_url }}">{{ object.name }}</a>
+                            </h3>
+                            <p>{{ object.excerpt }}</p>
+                            <a href="{{ object.get_absolute_url }}" class="read-more">
+                                {% trans "READ MORE" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1" style="font-size: 2em;">&laquo; ...</a>
+                    &nbsp;
+                    <a href="?page={{ page_obj.previous_page_number }}">{% trans "PREVIOUS" %}</a>
+                {% endif %}
+        
+                |
+                <span class="current">
+                    {% trans "Page" %} {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}.
+                </span>
+                |
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">{% trans "NEXT" %}</a>
+                    &nbsp;
+                    <a href="?page={{ page_obj.paginator.num_pages }}" style="font-size: 2em;">... &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</section>
+{% endblock %}
