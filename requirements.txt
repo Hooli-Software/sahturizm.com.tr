@@ -4,10 +4,7 @@ bleach==6.0.0
 deprecation==2.0.7
 Django==4.2.2
 django-localized-fields==6.6
-django-markdownfield==0.10.0
 django-modeltranslation==0.18.10
-django-postgres-extra==2.0.8
-django-weekday-field==1.1.0
 django-widget-tweaks==1.4.12
 importlib-metadata==6.8.0
 Markdown==3.2.1
