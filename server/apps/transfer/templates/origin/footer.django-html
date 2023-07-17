@@ -64,7 +64,7 @@
                             <a href="{% url 'transfer:privacy-policy' %}">{% trans "Privacy Policy" %}</a>
                         </li>
                         <li>
-                            <a href="{% url 'transfer:distance-sales-agreement' %}">{% trans "Distance Sales Agreement" %}0</a>
+                            <a href="{% url 'transfer:distance-sales-agreement' %}">{% trans "Distance Sales Agreement" %}</a>
                         </li>
                     </ul>
                 </div>
