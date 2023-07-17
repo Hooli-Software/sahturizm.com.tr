@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-14 14:57+0300\n"
+"POT-Creation-Date: 2023-07-17 19:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,6 +78,16 @@ msgstr "Vorname Nachname"
 msgid "Your message"
 msgstr "Ihre Nachricht"
 
+#: .\apps\transfer\templates\official\distance-sales-agreement.django-html:7
+#: .\apps\transfer\templates\origin\footer.django-html:67
+msgid "Distance Sales Agreement"
+msgstr "Vertrag über den Fernabsatz"
+
+#: .\apps\transfer\templates\official\privacy-policy.django-html:7
+#: .\apps\transfer\templates\origin\footer.django-html:64
+msgid "Privacy Policy"
+msgstr "Datenschutz-Bestimmungen"
+
 #: .\apps\transfer\templates\origin\footer.django-html:15
 #: .\apps\transfer\templates\transfer\home.django-html:21
 msgid "Luxury, Comfortable And Safe Transfer"
@@ -123,11 +133,7 @@ msgstr "Touren"
 msgid "FAQ"
 msgstr "FAQ'S"
 
-#: .\apps\transfer\templates\origin\footer.django-html:64
-msgid "Terms of use"
-msgstr "Nutzungsbedingungen"
-
-#: .\apps\transfer\templates\origin\footer.django-html:71
+#: .\apps\transfer\templates\origin\footer.django-html:74
 msgid "Contact data"
 msgstr "Kontakte"
 
@@ -355,6 +361,32 @@ msgstr "Ihre Nachricht"
 msgid "SEND REQUEST FOR FREE"
 msgstr "ANFRAGE KOSTENLOS SENDEN"
 
+#: .\apps\transfer\templates\transfer\tour-detail.django-html:28
+msgid "I WANT THIS TOUR"
+msgstr ""
+
+#: .\apps\transfer\templates\transfer\tour-detail.django-html:36
+msgid "Category"
+msgstr ""
+
+#: .\apps\transfer\templates\transfer\tour-detail.django-html:46
+msgid "Tour duration"
+msgstr ""
+
+#: .\apps\transfer\templates\transfer\tour-detail.django-html:50
+#, fuzzy
+#| msgid "Start location"
+msgid "Start-end clocks"
+msgstr "Startort"
+
+#: .\apps\transfer\templates\transfer\tour-detail.django-html:69
+msgid "Working days"
+msgstr ""
+
+#: .\apps\transfer\templates\transfer\tour-detail.django-html:82
+msgid "Tags"
+msgstr ""
+
 #: .\apps\transfer\templates\transfer\tour-list.django-html:7
 #, fuzzy
 #| msgid "Tour list"
@@ -385,16 +417,35 @@ msgstr "Seite"
 msgid "NEXT"
 msgstr "NÄCHSTEN"
 
+#: .\apps\transfer\views.py:11
+msgid "Your request sent succesfully!"
+msgstr "Ihre Anfrage wurde erfolgreich gesendet!"
+
+#: .\apps\transfer\views.py:59
+msgid "Your request created successfully!"
+msgstr "Ihre Anfrage wurde erfolgreich erstellt!"
+
+#: .\apps\transfer\views.py:85
+msgid "Form sent successfully!"
+msgstr "Formular erfolgreich gesendet!"
+
+#: .\apps\transfer\views.py:103
+msgid "Your message sent successfully!"
+msgstr "Ihre Nachricht wurde erfolgreich gesendet!"
+
+#~ msgid "Terms of use"
+#~ msgstr "Nutzungsbedingungen"
+
 #, fuzzy
 #~| msgid "Contact data"
 #~ msgid "Route data"
 #~ msgstr "Kontakte"
 
-msgid "OUR VISION"
-msgstr "UNSERE VISION"
+#~ msgid "OUR VISION"
+#~ msgstr "UNSERE VISION"
 
-msgid "GET THE HOTEST PROMOTIONS AND DISCOUNTS"
-msgstr "HOLEN SIE SICH DIE HEIßESTEN AKTIONEN UND RABATTE"
+#~ msgid "GET THE HOTEST PROMOTIONS AND DISCOUNTS"
+#~ msgstr "HOLEN SIE SICH DIE HEIßESTEN AKTIONEN UND RABATTE"
 
-msgid "BUY TOUR ONLINE"
-msgstr "TOUR ONLINE KAUFEN"
+#~ msgid "BUY TOUR ONLINE"
+#~ msgstr "TOUR ONLINE KAUFEN"

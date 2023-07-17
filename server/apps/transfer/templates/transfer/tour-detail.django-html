@@ -1,6 +1,7 @@
 {% extends 'origin/base.django-html' %}
 
 {% load static %}
+{% load i18n %}
 {% load transfers %}
 
 {% block title %}
@@ -24,7 +25,7 @@
                     <p>{{ object.description | markdown }}</p>
                     <br>
                     <a href='https://api.whatsapp.com/send?phone=905060335639&text=I want "{{ object.name }} ({{ object.id }})" tour' class="btn-lg btn-success">
-                        I WANT THIS TOUR
+                        {% trans "I WANT THIS TOUR" %}
                     </a>
                     <br>
                 </div>
@@ -32,7 +33,7 @@
             <div class="col-lg-4">
                 <div class="widget-sidebar">
                     <div class="sidebar-widget categories">
-                        <h3>Kategori</h3>
+                        <h3>{% trans "Category" %}</h3>
                         <ul>
                             <li>
                                 <a href="#">{{ object.category }}</a>
@@ -40,14 +41,13 @@
                         </ul>
                     </div>
                     <div class="sidebar-widget categories">
-                        <h3>Süre</h3>
                         <ul>
                             <li>
-                                Tur süresi:
+                                {% trans "Tour duration" %} :
                                 <span>{{ tour.duration_hours }} saat</span>
                             </li>
                             <li>
-                                Başlangıç-bitiş saati:
+                                {% trans "Start-end clocks" %} :
                                 <span>
                                     {% if tour.time_start %}
                                         {{ tour.time_start }}
@@ -66,7 +66,7 @@
                             </li>
                             {% if object.weekdays.all %}
                                 <b>
-                                    Detaylar:
+                                    {% trans "Working days" %} :
                                 </b>
                                 <br>
                                 <span>
@@ -79,7 +79,7 @@
                         </ul>
                     </div>
                     <div class="sidebar-widget categories">
-                        <h3>Etiketler</h3>
+                        <h3>{% trans "Tags" %}</h3>
                         <ul>
                             {% for tag in object.tags.all %}
                                 <li>

@@ -230,7 +230,7 @@ class Request(models.Model):
     email = models.EmailField(_('E-mail'))
     description = models.TextField(_('Your message'))
     created = models.DateTimeField('Tarih ve saat', auto_now=True)
-    answered = models.BooleanField('Cevaplandı')
+    answered = models.BooleanField('Cevaplandı', default=False)
 
     class Meta:
         verbose_name = 'Talep, Şikayet'

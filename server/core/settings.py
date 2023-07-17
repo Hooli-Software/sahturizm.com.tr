@@ -8,6 +8,7 @@ SECRET_KEY = 'django-insecure-x1u465wiyq6mc&y7h2ds-61gk^pcsy1!3#ht+ic5lihlpcr0bb
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '*',
     'localhost:8000',
     '170.187.187.90',
     'sahturizm.com.tr'

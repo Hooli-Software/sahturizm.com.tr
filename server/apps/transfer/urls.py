@@ -13,5 +13,8 @@ urlpatterns = (
     path('turlar/', views.TourListView.as_view(), name='tour-list'),
     path('turlar/<int:pk>/', views.TourDetailView.as_view(), name='tour-detail'), # noqa ignore
     path('faq/', views.FAQListView.as_view(), name='faq'),
-    path('checkout/<uuid:pk>/', views.TransferExtendedCheckoutView.as_view(), name='transfer-extended-checkout') # noqa
+    path('checkout/<uuid:pk>/', views.TransferExtendedCheckoutView.as_view(), name='transfer-extended-checkout'), # noqa
+
+    path('privacy-policy/', views.PrivacyPolicyView.as_view(), name='privacy-policy'), # noqa
+    path('distance-sales-agreement/', views.DistanceSalesAgreementView.as_view(), name='distance-sales-agreement') # noqa
 )

@@ -103,7 +103,6 @@ class TransferExtendedAdmin(admin.ModelAdmin):
 @admin.register(models.Place)
 class PlaceAdmin(admin.ModelAdmin):
     list_display = (
-        'id',
         'name',
         'link_map'
     )
@@ -112,7 +111,6 @@ class PlaceAdmin(admin.ModelAdmin):
 @admin.register(models.Tour)
 class TourAdmin(admin.ModelAdmin):
     list_display = (
-        'id',
         'name',
         'created'
     )
@@ -121,7 +119,6 @@ class TourAdmin(admin.ModelAdmin):
 @admin.register(models.TourCategory)
 class TourCategoryAdmin(admin.ModelAdmin):
     list_display = (
-        'id',
         'name',
     )
 
@@ -129,7 +126,6 @@ class TourCategoryAdmin(admin.ModelAdmin):
 @admin.register(models.TourTag)
 class TourTagAdmin(admin.ModelAdmin):
     list_display = (
-        'id',
         'name',
     )
 

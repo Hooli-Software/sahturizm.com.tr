@@ -1,13 +1,14 @@
 from django.views import generic
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 
 from . import models
 
 
 class HomeView(SuccessMessageMixin, generic.CreateView):
     model = models.Transfer
-    success_message = 'İsteğiniz başarı ile gönderilmiştir!'
+    success_message = _('Your request sent succesfully!')
     success_url = reverse_lazy('transfer:home')
     fields = (
         'email',
@@ -55,7 +56,7 @@ class OrderView(SuccessMessageMixin, generic.CreateView):
         'comment',
         'back'
     )
-    success_message = 'Talebiniz başarı ile Oluşturulmuştur!'
+    success_message = _('Your request created successfully!')
     success_url = reverse_lazy('transfer:order')
     template_name = 'transfer/order.django-html'
 
@@ -81,7 +82,7 @@ class TourListView(generic.ListView):
 
 class ContactView(SuccessMessageMixin, generic.CreateView):
     model = models.Request
-    success_message = 'Formunuz başarı ile gönderilmiştir!'
+    success_message = _('Form sent successfully!')
     success_url = reverse_lazy('transfer:contact')
     template_name = 'transfer/contact.django-html'
     fields = (
@@ -99,7 +100,7 @@ class FAQListView(SuccessMessageMixin, generic.CreateView):
         'email',
         'description'
     )
-    success_message = 'Mesajınız başarı ile gönderilmiştir!'
+    success_message = _('Your message sent successfully!')
     success_url = reverse_lazy('transfer:faq')
     extra_context = {
         'faq_list': models.FAQ.objects
@@ -109,3 +110,11 @@ class FAQListView(SuccessMessageMixin, generic.CreateView):
 class TransferExtendedCheckoutView(generic.DetailView):
     model = models.TransferExtended
     template_name = 'transfer/transfer-extended-checkout.django-html'
+
+
+class PrivacyPolicyView(generic.TemplateView):
+    template_name = 'official/privacy-policy.django-html'
+
+
+class DistanceSalesAgreementView(generic.TemplateView):
+    template_name = 'official/distance-sales-agreement.django-html'

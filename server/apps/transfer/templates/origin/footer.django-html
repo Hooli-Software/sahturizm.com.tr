@@ -10,7 +10,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="single-footer-widget">
                     <a href="index.html" class="logo">
-                        <img src="{% static 'img/breadcrumb-backgrounds/temporary-logo.jpg' %}" alt="Image">
+                        <img src="{% static 'img/logo-dark.svg' %}" alt="Image">
                     </a>
                     <p>{% trans "Luxury, Comfortable And Safe Transfer" %}</p>
                     <ul class="social-icon">
@@ -58,10 +58,13 @@
                             <a href="{% url 'transfer:tour-list' %}">{% trans "Get Tour" %}</a>
                         </li>
                         <li>
-                            <a href="#">{% trans "FAQ" %}</a>
+                            <a href="{% url 'transfer:faq' %}">{% trans "FAQ" %}</a>
                         </li>
                         <li>
-                            <a href="#">{% trans "Terms of use" %}</a>
+                            <a href="{% url 'transfer:privacy-policy' %}">{% trans "Privacy Policy" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'transfer:distance-sales-agreement' %}">{% trans "Distance Sales Agreement" %}0</a>
                         </li>
                     </ul>
                 </div>

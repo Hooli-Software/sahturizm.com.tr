@@ -35,6 +35,15 @@ class FAQTranslationOptions(TranslationOptions):
     )
 
 
+class PlaceTranslationOptions(TranslationOptions):
+    fields = (
+        'name',
+    )
+
+
 translator.register(models.Tour, TourTranslationOptions)
 translator.register(models.TourTag, TourTagTranslationOptions)
 translator.register(models.TourCategory, TourCategoryTranslationOptions) # noqa
+translator.register(models.WeekDay, WeekDayTranslationOptions)
+translator.register(models.FAQ, FAQTranslationOptions)
+translator.register(models.Place, PlaceTranslationOptions)
