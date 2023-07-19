@@ -21,7 +21,7 @@ class WeekDay(models.Model):
 
 
 class Place(models.Model):
-    name = models.CharField('Konum adı', max_length=25)
+    name = models.CharField('Konum adı', max_length=100)
     link_map = models.URLField('Konum linki', blank=True, null=True)
 
     def __repr__(self):
