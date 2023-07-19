@@ -26,3 +26,8 @@ def get_media():
 @register.filter(name='markdown')
 def markdown_format(text):
     return mark_safe(markdown.markdown(text))
+
+
+@register.simple_tag
+def get_places():
+    return models.Place.objects.all()

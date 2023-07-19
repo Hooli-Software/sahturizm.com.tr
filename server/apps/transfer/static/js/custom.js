@@ -1,7 +1,6 @@
 (function ($) {
   "use strict";
   $(".mean-menu").meanmenu({ meanScreenWidth: "991" });
-  $("select").niceSelect();
   $(window).on("scroll", function () {
     if ($(this).scrollTop() > 150) {
       $(".navbar-area").addClass("is-sticky");

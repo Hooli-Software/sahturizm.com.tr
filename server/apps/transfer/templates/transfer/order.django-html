@@ -3,12 +3,15 @@
 {% load static %}
 {% load i18n %}
 {% load widget_tweaks %}
+{% load transfers %}
 
 {% block title %}
     {% trans "GET TRANSFER ONLINE" %}
 {% endblock %}
 
 {% block content %}
+
+{% get_places as places %}
 
 <section class="track-area ptb-100 jarallax page-title-area text-start" data-jarallax='{"speed": 0.3}'>
     <div class="container">
@@ -92,12 +95,39 @@
                                     <div class="col-lg-4 col-sm-6 mb-3">
                                         <p>{% trans "Start location" %}</p>
                                         <div class="form-group">
-                                            {% render_field form.rfrom class="form-control bg-white mb-0" placeholder=form.rfrom.label %}
-                                            {% for error in form.rfrom.errors %}
-                                                <small class="text-warning">
-                                                    {{ error }}
-                                                </small>
-                                            {% endfor %}
+                                            {% render_field form.rfrom id="selectFrom" hidden=True %}
+                                            <input id="autoCompleteFrom" class="autocomplete-custom" autocomplete="off"/>
+                                            <script>
+                                                window.addEventListener("load", (event) => {
+                                                    const selectFrom = document.getElementById('selectFrom')
+                                                    const autoCompleteFrom = new autoComplete({
+                                                        name: "autoComplete",
+                                                        selector: "#autoCompleteFrom", // Any valid selector
+                                                        data: {
+                                                            src: [
+                                                                {% for place in places %}
+                                                                    { {{ place.id }}: "{{ place.name }}"},
+                                                                {% endfor %}
+                                                            ],
+                                                            keys: [
+                                                                {% for place in places %}
+                                                                    {{ place.id }},
+                                                                {% endfor %}
+                                                            ]
+                                                        },
+                                                        resultItem: {
+                                                            highlight: true
+                                                        }
+                                                    });
+                                                    autoCompleteFrom.input.addEventListener("selection", function (event) {
+                                                        const feedback = event.detail;
+                                                        autoCompleteFrom.input.blur();
+                                                        const selection = feedback.selection.value[feedback.selection.key];
+                                                        selectFrom.value = feedback.selection.key
+                                                        autoCompleteFrom.input.value = selection;
+                                                    });
+                                                });
+                                            </script>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-sm-6 mb-3">
@@ -111,12 +141,40 @@
                                     <div class="col-lg-4 col-sm-6 mb-3">
                                         <p>{% trans "Destination location" %}</p>
                                         <div class="form-group">
-                                            {% render_field form.rto class="form-control bg-white mb-0" placeholder=form.rto.label %}
-                                            {% for error in form.rto.errors %}
-                                                <small class="text-warning">
-                                                    {{ error }}
-                                                </small>
-                                            {% endfor %}
+                                            {% render_field form.rto id="selectTo" hidden=True %}
+                                            <input id="autoCompleteTo" class="autocomplete-custom" autocomplete="off"/>
+                                            <script>
+                                                window.addEventListener("load", (event) => {
+                                                    const selectTo = document.getElementById('selectTo')
+                                                    const autoCompleteTo = new autoComplete({
+                                                        name: "autoComplete",
+                                                        selector: "#autoCompleteTo", // Any valid selector
+                                                        data: {
+                                                            src: [
+                                                                {% for place in places %}
+                                                                    { {{ place.id }}: "{{ place.name }}"},
+                                                                {% endfor %}
+                                                            ],
+                                                            keys: [
+                                                                {% for place in places %}
+                                                                    {{ place.id }},
+                                                                {% endfor %}
+                                                            ]
+                                                        },
+                                                        resultItem: {
+                                                            highlight: true,
+                                                        },
+                                                    });
+                                                    autoCompleteTo.input.addEventListener("selection", function (event) {
+                                                        const feedback = event.detail;
+                                                        autoCompleteTo.input.blur();
+                                                        const selection = feedback.selection.value[feedback.selection.key];
+                                                        selectTo.value = feedback.selection.key
+                                                        autoCompleteTo.input.value = selection;
+                                                    });
+
+                                                });
+                                            </script>
                                         </div>
                                     </div>
                                     <br><br><br>

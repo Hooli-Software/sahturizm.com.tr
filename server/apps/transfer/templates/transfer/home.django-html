@@ -3,12 +3,14 @@
 {% load static %}
 {% load i18n %}
 {% load widget_tweaks %}
+{% load transfers %}
 
 {% block title %}
     {% trans "Home Page" %}
 {% endblock %}
 
 {% block content %}
+{% get_places as places %}
 <section class="banner-area banner-area-three bg-3 jarallax" data-jarallax='{"speed": 0.3}'>
     <div class="d-table">
         <div class="d-table-cell">
@@ -59,16 +61,81 @@
                                     <p>{% trans "Our support team will contact you soon and offer you a price quote. Thank you for your attention. You can reach us 24/7 via the support line." %}</p>
                                 {% else %}
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-12 mb-3">
                                             <div class="form-group">
                                                 <label>{{ form.rfrom.label }}</label>
-                                                {{ form.rfrom }}
+                                                {% render_field form.rfrom id="selectFrom" hidden=True %}
+                                                <input id="autoCompleteFrom" class="autocomplete-custom" aria-autocomplete="false"/>
+                                                <script>
+                                                    window.addEventListener("load", (event) => {
+                                                        const selectFrom = document.getElementById('selectFrom')
+                                                        const autoCompleteFrom = new autoComplete({
+                                                            name: "autoComplete",
+                                                            selector: "#autoCompleteFrom", // Any valid selector
+                                                            data: {
+                                                                src: [
+                                                                    {% for place in places %}
+                                                                        { {{ place.id }}: "{{ place.name }}"},
+                                                                    {% endfor %}
+                                                                ],
+                                                                keys: [
+                                                                    {% for place in places %}
+                                                                        {{ place.id }},
+                                                                    {% endfor %}
+                                                                ]
+                                                            },
+                                                            resultItem: {
+                                                                highlight: true
+                                                            }
+                                                        });
+                                                        autoCompleteFrom.input.addEventListener("selection", function (event) {
+                                                            const feedback = event.detail;
+                                                            autoCompleteFrom.input.blur();
+                                                            const selection = feedback.selection.value[feedback.selection.key];
+                                                            selectFrom.value = feedback.selection.key
+                                                            autoCompleteFrom.input.value = selection;
+                                                        });
+                                                    });
+                                                </script>
                                             </div>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-12 mb-3">
                                             <div class="form-group">
                                                 <label>{{ form.rto.label }}</label>
-                                                {{ form.rto }}
+                                                {% render_field form.rto id="selectTo" hidden=True %}
+                                                <input id="autoCompleteTo" class="autocomplete-custom" aria-autocomplete="false"/>
+                                                <script>
+                                                    window.addEventListener("load", (event) => {
+                                                        const selectTo = document.getElementById('selectTo')
+                                                        const autoCompleteTo = new autoComplete({
+                                                            name: "autoComplete",
+                                                            selector: "#autoCompleteTo", // Any valid selector
+                                                            data: {
+                                                                src: [
+                                                                    {% for place in places %}
+                                                                        { {{ place.id }}: "{{ place.name }}"},
+                                                                    {% endfor %}
+                                                                ],
+                                                                keys: [
+                                                                    {% for place in places %}
+                                                                        {{ place.id }},
+                                                                    {% endfor %}
+                                                                ]
+                                                            },
+                                                            resultItem: {
+                                                                highlight: true,
+                                                            },
+                                                        });
+                                                        autoCompleteTo.input.addEventListener("selection", function (event) {
+                                                            const feedback = event.detail;
+                                                            autoCompleteTo.input.blur();
+                                                            const selection = feedback.selection.value[feedback.selection.key];
+                                                            selectTo.value = feedback.selection.key
+                                                            autoCompleteTo.input.value = selection;
+                                                        });
+
+                                                    });
+                                                </script>
                                             </div>
                                         </div>
                                         <div class="col-6 mb-3">

@@ -16,5 +16,7 @@ urlpatterns = (
     path('checkout/<uuid:pk>/', views.TransferExtendedCheckoutView.as_view(), name='transfer-extended-checkout'), # noqa
 
     path('privacy-policy/', views.PrivacyPolicyView.as_view(), name='privacy-policy'), # noqa
-    path('distance-sales-agreement/', views.DistanceSalesAgreementView.as_view(), name='distance-sales-agreement') # noqa
+    path('distance-sales-agreement/', views.DistanceSalesAgreementView.as_view(), name='distance-sales-agreement'), # noqa
+
+    path('test/', views.TestView.as_view(), name='test') # noqa
 )

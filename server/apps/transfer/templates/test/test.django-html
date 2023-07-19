@@ -1,0 +1,33 @@
+{% extends 'origin/base.django-html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Privacy Policy" %}
+{% endblock %}
+
+{% block content %}
+    {% include 'transfer/breadcrumb.django-html' with title='Privacy Policy' background_url="/static/img/breadcrumb-backgrounds/tour-list.jpg" %}
+    <div class="container py-5">
+        <input id="autoComplete" class="autocomplete-custom">
+    </div>
+    <script>
+        const autoCompleteJS = new autoComplete({
+            name: "autoComplete",
+            selector: "#autoComplete", // Any valid selector
+            data: {
+                src: [
+                    "Antalya Airport",
+                    "Avsallar",
+                    "GREEN LIFE HOTEL (Alanya)"
+                ],
+                // keys: [
+                //     'antalya-airport',
+                //     'avsallar',
+                //     'green-life-alanya'
+                // ]
+            },
+        });
+    </script>
+{% endblock %}

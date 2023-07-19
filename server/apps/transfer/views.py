@@ -118,3 +118,7 @@ class PrivacyPolicyView(generic.TemplateView):
 
 class DistanceSalesAgreementView(generic.TemplateView):
     template_name = 'official/distance-sales-agreement.django-html'
+
+
+class TestView(generic.TemplateView):
+    template_name = 'test/test.django-html'

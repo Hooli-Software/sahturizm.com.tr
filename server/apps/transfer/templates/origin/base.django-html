@@ -5,7 +5,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -17,12 +17,14 @@
     <link rel="stylesheet" href="{% static '' %}css/magnific-popup.min.css">
     <link rel="stylesheet" href="{% static '' %}css/flaticon.css">
     <link rel="stylesheet" href="{% static '' %}css/meanmenu.min.css">
-    <link rel="stylesheet" href="{% static '' %}css/nice-select.min.css">
     <link rel="stylesheet" href="{% static '' %}css/odometer.min.css">
     <link rel="stylesheet" href="{% static '' %}css/style.css">
     <link rel="stylesheet" href="{% static '' %}css/dark.css">
     <link rel="stylesheet" href="{% static '' %}css/responsive.css">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
     <title>
         {% block title %}
         {% endblock %} - Şahturizm | Lüks,Konforlu Ve Güvenli Transfer
@@ -60,13 +62,11 @@
         <i class="bx bx-chevrons-up"></i>
     </div>
 
-
     <script src="{% static '' %}js/jquery.min.js"></script>
     <script src="{% static '' %}js/bootstrap.bundle.min.js"></script>
     <script src="{% static '' %}js/meanmenu.min.js"></script>
     <script src="{% static '' %}js/wow.min.js"></script>
     <script src="{% static '' %}js/owl.carousel.min.js"></script>
-    <script src="{% static '' %}js/nice-select.min.js"></script>
     <script src="{% static '' %}js/magnific-popup.min.js"></script>
     <script src="{% static '' %}js/jarallax.min.js"></script>
     <script src="{% static '' %}js/appear.min.js"></script>
