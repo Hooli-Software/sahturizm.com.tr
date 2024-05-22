@@ -1,5 +1,4 @@
 asgiref==3.7.2
-backports.zoneinfo==0.2.1
 bleach==6.0.0
 deprecation==2.0.7
 Django==4.2.2
