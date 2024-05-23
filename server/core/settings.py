@@ -13,6 +13,7 @@ ALLOWED_HOSTS = [
     '170.187.187.90',
     'sahturizm.com.tr'
 ]
+CSRF_TRUSTED_ORIGINS = ['https://sahturizm.com.tr']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
